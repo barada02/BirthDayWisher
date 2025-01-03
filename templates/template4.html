@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .card-template-4 {
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+            color: #333;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-template-4::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, 
+                #ff6b6b 0%, 
+                #4ecdc4 25%, 
+                #45b7d1 50%, 
+                #96c93d 75%, 
+                #ff6b6b 100%
+            );
+        }
+        .card-template-4 h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #ff6b6b;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+        .card-template-4 .message {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin: 25px 0;
+            color: #666;
+        }
+        .card-template-4 .signature {
+            font-style: italic;
+            margin-top: 30px;
+            color: #45b7d1;
+        }
+        .confetti-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+        .confetti {
+            font-size: 30px;
+            animation: spin 3s linear infinite;
+        }
+        .confetti:nth-child(odd) {
+            animation-direction: reverse;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .party-elements {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.3;
+        }
+        .party-elements:nth-child(1) { top: 10%; left: 10%; }
+        .party-elements:nth-child(2) { top: 20%; right: 15%; }
+        .party-elements:nth-child(3) { bottom: 15%; left: 20%; }
+        .party-elements:nth-child(4) { bottom: 25%; right: 10%; }
+    </style>
+</head>
+<body>
+    <div class="card-template-4">
+        <div class="party-elements">🎈</div>
+        <div class="party-elements">🎁</div>
+        <div class="party-elements">🎉</div>
+        <div class="party-elements">🎊</div>
+        <div class="confetti-container">
+            <span class="confetti">🌟</span>
+            <span class="confetti">✨</span>
+            <span class="confetti">🎈</span>
+        </div>
+        <h1>Happy Birthday!</h1>
+        <div class="message">
+            <p>Get ready to party! It's your special day!</p>
+            <p class="recipient-name"></p>
+            <p>Time to celebrate YOU! 🎉</p>
+        </div>
+        <div class="confetti-container">
+            <span class="confetti">🎂</span>
+            <span class="confetti">🎁</span>
+            <span class="confetti">🎈</span>
+        </div>
+        <div class="signature">
+            <p>Party on!</p>
+            <p class="sender-name"></p>
+        </div>
+    </div>
+</body>
+</html>

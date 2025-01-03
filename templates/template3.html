@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .card-template-3 {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid #eee;
+        }
+        .card-template-3 h1 {
+            font-size: 2.2em;
+            font-weight: 300;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            letter-spacing: 2px;
+        }
+        .card-template-3 .message {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 25px 0;
+            color: #555;
+            font-weight: 300;
+        }
+        .card-template-3 .signature {
+            font-style: normal;
+            margin-top: 35px;
+            color: #2c3e50;
+            font-weight: 400;
+        }
+        .minimal-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .accent-line {
+            width: 40px;
+            height: 3px;
+            background: #3498db;
+            margin: 20px auto;
+            transition: width 0.3s ease;
+        }
+        .card-template-3:hover .accent-line {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-template-3">
+        <div class="minimal-icon">🎂</div>
+        <div class="accent-line"></div>
+        <h1>Happy Birthday</h1>
+        <div class="message">
+            <p>Here's to another year of growth, joy, and beautiful moments.</p>
+            <p class="recipient-name"></p>
+            <p>May your day be as special as you are.</p>
+        </div>
+        <div class="accent-line"></div>
+        <div class="signature">
+            <p>Warmest wishes,</p>
+            <p class="sender-name"></p>
+        </div>
+    </div>
+</body>
+</html>
