@@ -52,7 +52,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
                 </div>
                 <div class="form-group">
                     <label for="loginPassword"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="loginPassword" name="password" required>
+                    <div class="password-field">
+                        <input type="password" id="loginPassword" name="password" required>
+                        <span class="password-toggle" onclick="togglePassword('loginPassword')">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
                 </div>
                 <button type="submit" class="auth-btn">Login</button>
             </form>
@@ -69,7 +74,12 @@ $isLoggedIn = isset($_SESSION['user_id']);
                 </div>
                 <div class="form-group">
                     <label for="signupPassword"><i class="fas fa-lock"></i> Password</label>
-                    <input type="password" id="signupPassword" name="password" required>
+                    <div class="password-field">
+                        <input type="password" id="signupPassword" name="password" required>
+                        <span class="password-toggle" onclick="togglePassword('signupPassword')">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
                 </div>
                 <button type="submit" class="auth-btn">Sign Up</button>
             </form>

@@ -362,6 +362,44 @@ body {
     background: #5d7ce6;
 }
 
+/* Password Field Styles */
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 1;
+}
+
+.password-toggle i {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover i {
+    color: #007bff;
+}
+
+.password-toggle i.fa-eye-slash {
+    color: #007bff;
+}
+
 /* Form Styles */
 .form-group {
     margin-bottom: 20px;
