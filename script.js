@@ -12,6 +12,10 @@ const recipientName = document.getElementById('recipientName');
 const customMessage = document.getElementById('customMessage');
 const templateSelect = document.getElementById('templateSelect');
 
+// Get logged in user's details
+const userName = document.querySelector('meta[name="user-name"]')?.content || '';
+const userEmail = document.querySelector('meta[name="user-email"]')?.content || '';
+
 // Generate Email Template
 function generateEmailTemplate(name, message, selectedTemplate) {
     let template = '';
@@ -26,7 +30,7 @@ function generateEmailTemplate(name, message, selectedTemplate) {
             </div>
             <div style="margin-top: 30px;">
                 <p>With love,</p>
-                <p>CK</p>
+                <p>${userName}</p>
             </div>
             <div style="font-size: 40px; margin: 10px;">🎁</div>
         </div>`;
@@ -42,7 +46,7 @@ function generateEmailTemplate(name, message, selectedTemplate) {
             <div style="height: 2px; background: linear-gradient(90deg, transparent, gold, transparent); margin: 20px auto; width: 80%;"></div>
             <div style="margin-top: 35px; color: gold;">
                 <p>Warmest wishes,</p>
-                <p>CK</p>
+                <p>${userName}</p>
             </div>
             <div style="font-size: 30px; margin: 15px;">✨</div>
         </div>`;
@@ -58,7 +62,7 @@ function generateEmailTemplate(name, message, selectedTemplate) {
             <div style="width: 40px; height: 3px; background: #3498db; margin: 20px auto;"></div>
             <div style="margin-top: 35px; color: #2c3e50;">
                 <p>Warmest wishes,</p>
-                <p>CK</p>
+                <p>${userName}</p>
             </div>
         </div>`;
     } else if (selectedTemplate === 'template4') {
@@ -84,7 +88,7 @@ function generateEmailTemplate(name, message, selectedTemplate) {
             </div>
             <div style="margin-top: 30px; color: #45b7d1;">
                 <p>Party on!</p>
-                <p>CK</p>
+                <p>${userName}</p>
             </div>
         </div>`;
     }
@@ -116,7 +120,10 @@ cardForm.addEventListener('submit', async (e) => {
                 recipientName.value,
                 customMessage.value || 'Wishing you a fantastic birthday filled with joy and happiness!',
                 templateSelect.value
-            )
+            ),
+            user_name: userName,
+            user_mail: userEmail,
+            reply_to: userEmail
         };
 
         await emailjs.send(serviceID, templateID, templateParams);

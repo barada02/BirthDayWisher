@@ -7,6 +7,10 @@ $isLoggedIn = isset($_SESSION['user_id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php if ($isLoggedIn): ?>
+    <meta name="user-name" content="<?php echo htmlspecialchars($_SESSION['user_name']); ?>">
+    <meta name="user-email" content="<?php echo htmlspecialchars($_SESSION['user_email']); ?>">
+    <?php endif; ?>
     <title>Birthday Wishes - Create Beautiful Birthday Cards</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
