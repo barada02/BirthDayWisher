@@ -144,5 +144,21 @@ recipientName.addEventListener('input', updatePreview);
 customMessage.addEventListener('input', updatePreview);
 templateSelect.addEventListener('change', updatePreview);
 
+// Password Toggle Function
+function togglePassword(inputId) {
+    const passwordInput = document.getElementById(inputId);
+    const toggleButton = passwordInput.parentElement.querySelector('.password-toggle i');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleButton.classList.remove('fa-eye');
+        toggleButton.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        toggleButton.classList.remove('fa-eye-slash');
+        toggleButton.classList.add('fa-eye');
+    }
+}
+
 // Initial preview
 updatePreview();
